@@ -1,0 +1,115 @@
+﻿@using MVCCore.Models.Enumerations;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alexandru Marica</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+   
+    <div id="loading-screen">
+        <div class="loading-screen-container">
+            <div class="intro-message1">
+                <span class="display-6 text-white">ALEXANDRU</span>
+            </div>
+            <div class="intro-message">
+                <span class="display-6 text-white text-content" style="opacity: 0;">FOTOGRAF</span>
+                <span class="display-6 text-white text-content">POVESTITOR</span>
+            </div>
+            <div class="intro-message2">
+                <span class="display-6 text-white">MARICA</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-black nav navbar navbar-expand-md py-md-3 py-1 fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto align-items-md-center">
+                    <span class="nav-item">
+                        <a asp-action="Index" asp-controller="Home" class="text-white nav-link display-6 lead" aria-current="page">Home</a>
+                    </span>
+                    <span class="nav-item dropdown d-none d-md-block">
+                        <a class="text-white nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Lens & Perspectives
+                        </a>
+                        <span class="dropdown-menu">
+                            <span class="d-flex flex-row align-items-center p-2">
+                                <img src="/img/category-studio.jpg" class="w-25 rounded-circle" />
+                                <a class="dropdown-item border-bottom border-dark-subtle" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Studio">My Studio</a>
+                            </span>
+                            <span class="d-flex flex-row align-items-center p-2">
+                                <img src="/img/category-location.jpg" class="w-25 rounded-circle" />
+                                <a class="dropdown-item border-bottom border-dark-subtle" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Locations">Locations</a>
+                            </span>
+                            <span class="d-flex flex-row align-items-center p-2">
+                                <img src="/img/category-portrait.jpg" class="w-25 rounded-circle" />
+                                <a class="dropdown-item border-bottom border-dark-subtle" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Portraits">Portraits</a>
+                            </span>
+                        </span>
+                    </span>
+                    <!--Mb nav-->
+                    <span class="d-flex flex-row align-items-center p-2 d-block d-md-none">
+                        <span class="dropdown-item text-secondary">Lens & Perspectives</span>
+                    </span>
+                    <div class="text-start border-top border-dark-subtle d-block d-md-none">
+                        <span class="nav-item">
+                            <a class="nav-link text-white" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Studio">My Studio</a>
+                    </span>
+                        <span class="nav-item">
+                            <a class="nav-link text-white" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Locations">Locations</a>
+                    </span>
+                        <span class="nav-item">
+                            <a class="nav-link text-white" asp-action="DisplayAlbums" asp-route-categoryId="@Category.Portraits">Portraits</a>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+            @RenderBody()
+     <footer class="py-3">
+        <ul class="border-bottom pb-3 mb-3 border-dark"></ul>
+        <div class="d-flex justify-content-center justify-content-md-end">
+                <div class="fc_logo" style="display: inline-block; margin: 0; padding: 5px;"><a title="Catalogul fotografilor si videografilor de nunta din Romania" href="https://www.fotografi-cameramani.ro/alexandru-marica-photographer_5764" target="_blank" style="text-decoration: none; "><img alt="Fotografi-Cameramani.ro" src="https://www.fotografi-cameramani.ro/layout/standard/images/logos/svg/fotografi-cameramani-negru.svg" style="max-width:154px; max-height:43px" /></a></div>
+
+        </div>
+
+        <p class="text-center text-muted">
+            © @DateTime.Now.Year Alexandru Marica Photographer
+        </p>
+    </footer>
+    </div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="~/js/reveal.js" asp-append-version="true"></script>
+    <script src="~/js/loader.js" asp-append-version="true"></script>
+    <script defer>
+
+        $(document).ready(function () {
+            $('#toggleButton').click(function () {
+                $('#myDiv').toggle();
+            });
+        });
+    </script>
+    <script src="~/js/imageService.js" asp-append-version="true"></script>
+   
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

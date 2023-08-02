@@ -1,0 +1,39 @@
+﻿@model List<AlbumModel>
+@{
+    ViewData["Title"] = "DisplayAlbums";
+}
+
+@{
+      <div class="container">
+        <div class="row">
+                @foreach (var m in Model)
+                {
+                <div class="col-md-6 py-3">
+                        @if (m.DbPhotos.FirstOrDefault(x => x.IsThumbnail) == null)
+                        {
+                            <div class="album d-flex flex-column shadow">
+                            <div class="bg-black text-md-start text-center">
+                                <span class="font-raleway fs-5 text-white px-md-5">@m.Name</span>
+                            </div>
+                            <img src="/img/Placeholder.jpg"
+                                 class="img-fluid rounded"
+                                 alt="Placeholder" />
+                            <a asp-action="LoadAlbum" asp-route-categoryId="@m.Category" asp-route-albumId="@m.Id" class="bg-black text-center py-1" style="text-decoration:underline; color:white">Reveal</a>
+                            </div>
+                        }
+                        else
+                        {
+                        <div class="album d-flex flex-column">
+                            <div class="bg-black text-md-start text-center">
+                                <span class="font-raleway fs-5 text-white px-md-5">@m.Name</span>
+                            </div>
+
+                            <a asp-action="LoadAlbum" asp-route-categoryId="@m.Category" asp-route-albumId="@m.Id" class="bg-black text-center py-1" style="text-decoration:underline;color:white"><img src="@m.DbPhotos.FirstOrDefault(x=>x.IsThumbnail).DbPath" class="img-fluid"/></a>
+                        </div>
+                        }
+                </div>
+                }
+        </div>
+    </div>
+}
+

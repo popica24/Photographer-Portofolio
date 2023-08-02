@@ -1,0 +1,26 @@
+﻿@model CoverModel
+@{
+    <div class="row">
+
+        <div class="col-md-4">
+            <form asp-controller="Cover" asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ID" />
+                <input type="hidden" asp-for="Category" />
+                <div>
+                    @Html.LabelFor(m=>m.Thumbnail,new {@class = "form-label"})
+                </div>
+                <div>
+                    <input asp-for="Thumbnail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <span>Current Cover</span>
+            <img src="@Model.DbPath" class="img-fluid" style="max-width:600px" />
+        </div>
+    </div>
+}

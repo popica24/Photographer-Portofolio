@@ -1,0 +1,23 @@
+﻿@model Tuple<AlbumModel, StatsModel, List<ReviewModel>,List<CoverModel>>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    <script>
+        window.onload = function() {
+          window.scrollTo(0, 0);
+        };
+    </script>
+    <partial name="Shared/_BannerPartial" model="Model.Item1" />
+
+    <partial name="Shared/_MyWorkPartial" model="Model.Item4"/>
+
+    <partial name="Shared/_WhoAmIPartial" />
+
+    <partial name="Shared/_StatsPartial" model="Model.Item2" />
+
+    <partial name="Shared/_ReviewsPartial" model="Model.Item3" />
+
+    <partial name="Shared/_ContactPartial" />
+}
+

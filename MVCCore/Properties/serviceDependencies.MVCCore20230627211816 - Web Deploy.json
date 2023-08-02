@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/MVCCore20230627211816/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDefaultConnection_332AF98AFC",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/alexphotosdbserver/databases/AlexPhotos_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "dynamicId": null
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/MVCCore20230627211816/providers/Microsoft.ServiceLinker/linkers/AzureConnectionString_3E3F96D7CC, /subscriptions/12b29058-2728-4a6c-8d48-ba8da501199b/resourcegroups/AlexPhotos/providers/Microsoft.Web/sites/MVCCore20230627211816/providers/Microsoft.ServiceLinker/linkers/AzureConnectionString_9E7730399D",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/dataphotoblobsaccount",
+      "type": "storage.azure",
+      "connectionId": "Azure:ConnectionString",
+      "dynamicId": null
+    }
+  }
+}

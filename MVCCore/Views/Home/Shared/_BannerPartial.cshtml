@@ -1,0 +1,73 @@
+﻿@model AlbumModel
+@{
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="slide-right ">
+                        <span class="index-hero-text">ALEXANDRU</span>
+                        <div class="d-flex flex-row align-items-center slide-right">
+                            <span class="index-hero-text">MARICA</span>
+                            <div class="logo-container">
+                                <img src="/img/logo-black.png" class="ms-auto img-fluid pr-5" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12 tile">
+
+            <div class="d-flex justify-content-end">
+                <div id="carouselExampleIndicators" class="carousel slide image-container">
+                    <div class="carousel-indicators">
+                        @for (int i = 0; i < Model.DbPhotos.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i"
+                                        class="active" aria-current="true" aria-label="Slide @i"></button>
+                            }
+                            else
+                            {
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i"
+                                        aria-current="true" aria-label="Slide @i"></button>
+                            }
+                        }
+                    </div>
+                    <div class="carousel-inner ">
+                        @for (int i = 0; i < Model.DbPhotos.Count; i++)
+                        {
+                            if (i == 0)
+                            {
+                                <div class="carousel-item active image-container">
+                                    <img src="@Model.DbPhotos.ToList()[@i].DbPath" class="d-block" alt="..." />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="carousel-item image-container">
+                                    <img src="@Model.DbPhotos.ToList()[@i].DbPath" class="d-block" alt="..." />
+                                </div>
+                            }
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

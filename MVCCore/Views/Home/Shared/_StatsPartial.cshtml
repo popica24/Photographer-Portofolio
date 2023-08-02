@@ -1,0 +1,45 @@
+﻿@model StatsModel
+@{
+    <div class="row">
+        <div class="col-12 d-flex flex-row align-items-center justify-content-center tile">
+
+            <div class="py-4 event-cards">
+                <div class="card text-center bg-transparent border-0 d-flex align-items-center">
+                    <img class="card-img-top w-50" src="/img/event-logo.png">
+                    <div class="card-body">
+                        <div class="d-flex flex-column lead display-6">
+                            <span>Events</span>
+                            <span>@Model.Events</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" py-4 event-cards">
+                <div class="card text-center bg-transparent border-0 d-flex align-items-center">
+                    <img class="card-img-top" src="/img/reviews-logo.png" style="max-width:43%">
+                    <div class="card-body">
+                        <div class="d-flex flex-column lead display-6">
+                            <span>Reviews</span>
+                            <span>@Model.Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-4 event-cards">
+                <div class="card text-center bg-transparent border-0 d-flex align-items-center">
+                    <img class="card-img-top w-50" src="/img/trophy-logo.png ">
+                    <div class="card-body">
+                        <div class="d-flex flex-column lead display-6">
+                            <span>Prizes</span>
+                            <span>@Model.Trophies</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

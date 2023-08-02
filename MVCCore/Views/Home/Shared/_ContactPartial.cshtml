@@ -1,0 +1,76 @@
+﻿@{
+    <div class="row " id="contact">
+        <div class="col-12 tile">
+            <button class="btn btn-secondary w-100" style="--bs-btn-border-radius : 0" id="toggleButton">
+                <span class="font-raleway display-6" id="toggleButton"> CONTACT ME</span>
+            </button>
+        </div>
+    </div>
+    <div class="row" id="myDiv" style="display: none;">
+        <div class="col-12">
+            <div class="d-flex flex-column align-items-center justify-content-center ">
+                <div class="w-50 py-3 border">
+                        <form action="SendMail" method="POST">
+                            <label class="form-label" for="name">Your name*</label>
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Andrei Popescu" required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="email">Your email*</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="example@domain.com" required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="eventDate">Date of the event*</label>
+                            <input class="form-control" type="date" id="eventDate" name="eventDate" required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="location">Location (city)*</label>
+                            <input class="form-control" type="text" id="location" name="location" placeholder="City of the event" required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="exactLocation">
+                                Where your event is taking place (the exact
+                                name of your location)*
+                            </label>
+                            <input class="form-control" type="text" id="exactLocation" name="exactLocation" placeholder="Ex : Ballroom / Church name" required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="aboutYou">
+                                Tell us a little about yourself and your event
+                                day*
+                            </label>
+                            <input class="form-control" type="text" id="aboutYou" name="aboutYou" placeholder="Intimate wedding with 40-50 people at an event venue." required
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="howFound">How did you find out about me?*</label>
+                            <input class="form-control" type="text" id="howFound" name="howFound" required placeholder="Through Facebook / Friend / Instagram etc..."
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="socialMedia">Account Facebook or Instagram</label>
+                            <input class="form-control" type="text" id="socialMedia" name="socialMedia" placeholder="Your social media account, please specify Instagram / Facebook"
+                                   oninvalid="this.setCustomValidity('Please fill out this field')"
+                                   oninput="this.setCustomValidity('')">
+
+                            <label class="form-label" for="message">Your message (optional)</label>
+                            <textarea class="form-control" id="message" placeholder="Your additional message for Alex" name="message"></textarea>
+
+                            <div class="w-100 py-3">
+                                <input type="submit" class="btn btn-secondary w-100" value="SEND">
+
+                            </div>
+                        </form>
+               
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+}

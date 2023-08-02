@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MVCCore.Models.ReviewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Review Manager</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="row">
+    <div class="col-12" id="reviewGallery">
+        <div class="row">
+            @foreach (var review in Model)
+            {
+                <div class="col-3"style="max-height:500px">
+                    <!-- Set the column width to 3 out of 12 (4 columns in total) -->
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="image-container">
+                            <img src="@review.DbPhoto" alt="@review.Id" />
+                        </div>
+                        <div class="delete-button-wrapper">
+                            <a asp-action="Delete" asp-route-id="@review?.Id">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="text-center">
+        <span class="text-danger">@TempData["Error"]</span>
+        <span class="text-success">@TempData["Success"]</span>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="text-start">
+        <a asp-controller="Admin" asp-action="Index" class="btn btn-primary">Back to Admin Portal</a>
+    </div>
+</div>
